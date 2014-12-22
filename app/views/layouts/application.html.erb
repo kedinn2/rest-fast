@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restfast</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<header>
+		<div class="header-top">
+			<div class="logo">
+				<h1>
+					RestFast
+				</h1>
+			</div>
+			<a href="#" class="icon-menu" id="button-menu">
+			</a>
+		</div>
+		<div class="menu" id="menu">
+				<ul>
+					<li>
+						<a href="#">Inicio</a>
+					</li>
+					<li>
+						<a href="#">Bebidas</a>
+					</li>
+					<li>
+						<a href="#">Comidas</a>
+					</li>
+					<li>
+						<a href="#">Pagos</a>
+					</li>
+					<li>
+						<a href="#">Pedidos</a>
+					</li>
+					</a>
+				</ul>
+		</div>
+	</header>
+	<div class="notificacion">
+	<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+	</div>
+	<div class="main-wrapper page-row page-row-expanded">
+		<%= yield %>
+		</div>
+	</div>	
+	<footer class="page-row">
+		<h5>Copyright 2014 - Todos los derechos reservados - RestFast!</h5>
+	</footer>
+	<!-- Javascripts -->
+	<%= javascript_include_tag 'restfast', 'data-turbolinks-track' => true %>
+
+
+	
+	
+</body>
+</html>

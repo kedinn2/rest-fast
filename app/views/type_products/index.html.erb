@@ -1,0 +1,36 @@
+
+    <div class="container service">
+      
+    <% if user_signed_in? %>
+   
+        <li>Binvenido <%= link_to current_user.email, edit_user_registration_path %></li>
+        <li>
+          <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+        </li>
+       <% else %>
+       <li><%= link_to "Entrar", new_user_session_path %></li>
+    <% end %>
+
+
+
+      <% @type_products.each do |type_product| %>
+      <div class="list-service">    
+        <figure>
+
+          <%= image_tag(type_product.image, size: "280") %>
+        </figure>
+        <div class="text">
+          <a href="#">
+            <%= link_to type_product.name, products_path(type_product: type_product.name) %>
+          </a>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+      <td><%= link_to 'Editar', edit_type_product_path(type_product) %></td> 
+        <td><%= link_to 'Eliminar', type_product, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      <% end %>
+      <% end %>
+    </div>
+<% if user_signed_in? %>
+<%= link_to 'Agregar Tipo de Producto', new_type_product_path %>
+<% end %>

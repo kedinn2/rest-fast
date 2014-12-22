@@ -1,0 +1,31 @@
+<div class="container services-elements">
+
+
+
+<br>
+ <% if user_signed_in? %>
+<%= link_to 'Agregar Producto', new_product_path %>
+<% end %>
+<h2 class="title-post"> </h2>
+
+  <% @products.each do |product| %>
+        <% if user_signed_in? %>
+       <td><%= link_to 'Editar', edit_product_path(product) %></td> 
+        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+      <div class="elements">
+        <div class="elements-header">
+          <img src="<%= product.image %>" alt="" width="140" height="120px">
+        </div>
+        <div class="elements-footer">
+          <h3><%= product.name %></h3>
+          <p>Precio : S/. 2.00</p>
+          <p>Cantidad : 1 </p>
+          <div class="button">
+            <a href="pay.html">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+    </div>

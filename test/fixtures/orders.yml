@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  status: false
+  product_id: 
+  table_id: 
+  payment_id: 
+
+two:
+  quantity: 1
+  status: false
+  product_id: 
+  table_id: 
+  payment_id: 
